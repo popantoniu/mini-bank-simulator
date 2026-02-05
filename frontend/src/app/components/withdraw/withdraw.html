@@ -1,0 +1,43 @@
+<!-- src/app/components/withdraw/withdraw.component.html -->
+<div class="withdraw-container">
+  <h2>Withdraw Money</h2>
+
+  @if (succes) {
+    <div class="alert alert-success">
+      {{ succes }}
+    </div>
+  }
+
+  @if (error) {
+    <div class="alert alert-error">
+      {{ error }}
+    </div>
+  }
+
+  <form (ngSubmit)="onSubmit()" class="withdraw-form">
+    <div class="form-group">
+      <label for="amount">Amount ($)</label>
+      <input
+        type="number"
+        id="amount"
+        [(ngModel)]="amount"
+        name="amount"
+        placeholder="Enter amount to withdraw"
+        step="0.01"
+        min="0.01"
+        required
+        [disabled]="loading"
+      />
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary" [disabled]="loading">
+        {{ loading ? 'Processing...' : 'Withdraw' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="goBack()" [disabled]="loading">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+

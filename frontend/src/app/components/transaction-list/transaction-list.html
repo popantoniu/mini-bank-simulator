@@ -1,0 +1,59 @@
+<!-- src/app/components/transaction-list/transaction-list.component.html -->
+<div class="transaction-container">
+  <h2>Transaction History</h2>
+  
+  @if (loading) {
+    <div class="loading">
+      Loading transactions...
+    </div>
+  }
+  
+  @if (error) {
+    <div class="error">
+      {{ error }}
+    </div>
+  }
+  
+  @if (!loading && !error) {
+    @if (transactions.length === 0) {
+      <div class="no-transactions">
+        No transactions yet. Start by making a deposit or withdrawal!
+      </div>
+    }
+    
+    @if (transactions.length > 0) {
+      <div class="transaction-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Date & Time</th>
+              <th>Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (transaction of transactions; track transaction.id) {
+              <tr [ngClass]="getTransactionClass(transaction.type)">
+                <td>{{ transaction.date | date:'medium' }}</td>
+                <td>
+                  <span class="transaction-type">{{ transaction.type }}</span>
+                </td>
+                <td class="amount">
+                  @if (transaction.type === 'DEPOSIT') {
+                    <span class="positive">+${{ transaction.amount | number:'1.2-2' }}</span>
+                  }
+                  @if (transaction.type === 'WITHDRAW') {
+                    <span class="negative">-${{ transaction.amount | number:'1.2-2' }}</span>
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  }
+  
+  <button class="btn btn-back" (click)="goBack()">Back to Dashboard</button>
+</div>
+
