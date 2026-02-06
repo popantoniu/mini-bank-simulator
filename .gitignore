@@ -16,3 +16,6 @@
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local Spring Boot properties
+src/main/resources/application.properties
