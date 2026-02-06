@@ -3,14 +3,14 @@
   max-width: 800px;
   margin: 50px auto;
   padding: 30px;
-  background-color: white;
+  background-color: rgb(236, 247, 255);
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(1, 35, 54, 0.1);
 }
 
 h2 {
   text-align: center;
-  color: #333;
+  color: #166ae9;
   margin-bottom: 30px;
 }
 
@@ -22,7 +22,7 @@ h2 {
 
 .error {
   color: #dc3545;
-  background-color: #f8d7da;
+  background-color: #a55f65;
   border: 1px solid #f5c6cb;
   border-radius: 5px;
 }
@@ -38,7 +38,7 @@ table {
 }
 
 thead {
-  background-color: #f8f9fa;
+  background-color: #b3d9ff;
 }
 
 th {
@@ -51,11 +51,11 @@ th {
 
 td {
   padding: 15px;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #74b7fa;
 }
 
 tr:hover {
-  background-color: #f8f9fa;
+  background-color: #94c9ff;
 }
 
 .transaction-type {
@@ -103,7 +103,7 @@ tr:hover {
 }
 
 .btn-back:hover {
-  background-color: #0056b3;
+  background-color: #63afff;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }

@@ -7,8 +7,15 @@
 
 h2 {
   text-align: center;
-  color: #333;
+  color: #313131;
   margin-bottom: 30px;
+}
+
+h4{
+  text-align: center;
+  color: #6e6e6e;
+  margin-bottom: 30px;
+  font-style: italic;
 }
 
 .loading, .error {
@@ -73,19 +80,19 @@ h2 {
 }
 
 .btn-deposit {
-  background-color: #28a745;
-  color: white;
+  background-color: #71ff46;
+  color: rgb(53, 167, 91);
 }
 
 .btn-deposit:hover {
-  background-color: #218838;
+  background-color: #bdff9e;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
 }
 
 .btn-withdraw {
-  background-color: #dc3545;
-  color: white;
+  background-color: #ff6070;
+  color: rgb(180, 41, 41);
 }
 
 .btn-withdraw:hover {
@@ -95,7 +102,7 @@ h2 {
 }
 
 .btn-transactions {
-  background-color: #007bff;
+  background-color: #5eacff;
   color: white;
 }
 
@@ -104,3 +111,5 @@ h2 {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
+
+

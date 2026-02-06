@@ -1,32 +1,29 @@
-<!-- src/app/components/dashboard/dashboard.component.html -->
+<!-- src/app/components/dashboard/dashboard.html -->
 <div class="dashboard-container">
-  <h2>Account Dashboard</h2>
+   <h2>Welcome to Fake Bank</h2>
+   <h4>where money is just a number</h4>
 
-  @if (loading) {
-    <div class="loading">
-      Loading balance...
-    </div>
+  @if (loading()) {
+    <div class="loading">Loading balance...</div>
   }
 
-  @if (error) {
-    <div class="error">
-      {{ error }}
-    </div>
+  @if (error()) {
+    <div class="error">{{ error() }}</div>
   }
 
-  @if (balance && !loading) {
+  @if (balance()) {
     <div class="balance-card">
-      <h3>{{ balance.accountName }}</h3>
+      <h3>{{ balance()!.accountName }}</h3>
 
       <div class="balance-amount">
         <span class="currency">$</span>
         <span class="amount">
-          {{ balance.balance | number:'1.2-2' }}
+          {{ balance()!.balance | number:'1.2-2' }}
         </span>
       </div>
 
       <p class="account-id">
-        Account ID: {{ balance.accountId }}
+        Account ID: {{ balance()!.accountId }}
       </p>
     </div>
   }

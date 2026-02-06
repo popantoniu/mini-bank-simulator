@@ -96,7 +96,7 @@ h2 {
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: #218838;
+  background-color: #94ffab;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
 }
@@ -107,7 +107,7 @@ h2 {
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: #5a6268;
+  background-color: #3c4144;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
 }

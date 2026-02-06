@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { TransactionService } from '../../services/transaction.service';
 import { TransactionResponse } from '../../models/transaction-response.model';
 import { Router } from '@angular/router';
@@ -16,9 +16,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './transaction-list.css',
 })
 export class TransactionList implements OnInit {
-  transactions: TransactionResponse[] = [];
-  loading: boolean = true;
-  error: string = '';
+  transactions = signal<TransactionResponse[]> ([]);
+  loading = signal<boolean>(true);
+  error = signal<string | null>(null);
 
   constructor(
     private transactionService: TransactionService, 
@@ -30,17 +30,17 @@ export class TransactionList implements OnInit {
   }
 
   loadTransactions():void{
-    this.loading = true;
-    this.error = '';
+    this.loading.set(true);
+    this.error.set(null);
 
     this.transactionService.getTransactions().subscribe({
       next:(data) =>{
-        this.transactions = data;
-        this.loading = false;
+        this.transactions.set(data);
+        this.loading.set(false);
       },
       error:(err) => {
-        this.error = 'Failed to load transactions';
-        this.loading = false;
+        this.error.set('Failed to load transactions');
+        this.loading.set(false);
         console.error(err);
       }
     });
